@@ -74,15 +74,30 @@ const QuestionsManager = [
 
 async function init(){
     var managerData = await inquirer.prompt(QuestionsManager)
-    console.log(managerData)
+    var manager = new Manager()
+    manager.id = managerData.id
+    manager.name = managerData.name
+    manager.email = managerData.email
+    manager.officeNumber = managerData.officeNumber
     
     var mainSelection = await inquirer.prompt(QuestionsMainMenu)
     console.log(mainSelection)
     
     var engineerData = await inquirer.prompt(QuestionsEngineer)
-    console.log(engineerData)
+    var engineer = new Engineer()
+    engineer.id = engineerData.id
+    engineer.name = engineerData.name
+    engineer.email = engineerData.email
+    engineer.gitHub = engineerData.github
+
     var internData = await inquirer.prompt(QuestionsIntern)
-    console.log(internData)
+    var intern = new Intern()
+    intern.id = internData.id
+    intern.email = internData.email
+    intern.name = internData.name
+    intern.school = intern.school
+
+    
 }
 
 
